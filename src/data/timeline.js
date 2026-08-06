@@ -1,0 +1,58 @@
+export const timeline = [
+  {
+    id: 1,
+    date: "2025-01-24",
+    title: "The Beginning",
+    caption: "The day everything started. The day I found my favorite person.",
+    image: "/assets/photos/first-date.svg",
+  },
+  {
+    id: 2,
+    date: "2025-02-14",
+    title: "First Valentine's",
+    caption: "Our first celebration together — still getting to know each other's favorite flowers.",
+    image: "/assets/photos/valentines.svg",
+  },
+  {
+    id: 3,
+    date: "2025-04-12",
+    title: "First Trip Together",
+    caption: "Getting lost together is better than finding our way apart.",
+    image: "/assets/photos/first-trip.svg",
+  },
+  {
+    id: 4,
+    date: "2025-06-24",
+    title: "Five Months",
+    caption: "Half a year in, and already can't picture life without you.",
+    image: "/assets/photos/five-months.svg",
+  },
+  {
+    id: 5,
+    date: "2025-09-24",
+    title: "Eight Months",
+    caption: "Still falling for you, a little more every day.",
+    image: "/assets/photos/eight-months.svg",
+  },
+  {
+    id: 6,
+    date: "2025-12-25",
+    title: "First Christmas",
+    caption: "The best gift was simply being with you.",
+    image: "/assets/photos/christmas.svg",
+  },
+  {
+    id: 7,
+    date: "2026-01-24",
+    title: "One Year Anniversary",
+    caption: "365 days of choosing each other. Here's to forever more.",
+    image: "/assets/photos/anniversary.svg",
+  },
+  {
+    id: 8,
+    date: "2026-07-24",
+    title: "18 Months",
+    caption: "Still my favorite chapter. Still writing our story together.",
+    image: "/assets/photos/eighteen-months.svg",
+  },
+];

@@ -1,0 +1,329 @@
+@import "tailwindcss";
+
+/* Local Fonts */
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('/fonts/PlayfairDisplay-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('/fonts/PlayfairDisplay-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('/fonts/PlayfairDisplay-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('/fonts/PlayfairDisplay-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('/fonts/PlayfairDisplay-BoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@theme {
+  --color-cream: #FDF6EC;
+  --color-cream-dark: #F5EBD8;
+  --color-lilac: #B8A9C9;
+  --color-lilac-light: #D4C8E2;
+  --color-lilac-dark: #8B7BA8;
+  --color-purple: #7C5CBF;
+  --color-purple-dark: #5A3D99;
+  --color-rose: #C9A9A6;
+  --color-rose-light: #E2CCC9;
+  --color-sage: #A8B5A0;
+  --color-sage-dark: #7D8C74;
+  --color-gold: #C4A35A;
+  --color-gold-light: #E0D0A0;
+  --color-charcoal: #2D2D2D;
+  --color-warm-gray: #6B6360;
+  
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Inter', system-ui, sans-serif;
+}
+
+/* Typography scale */
+@theme {
+  --text-display: 3rem;
+  --text-display-lg: 4rem;
+  --text-heading: 1.75rem;
+  --text-heading-lg: 2.25rem;
+  --text-body: 1rem;
+  --text-body-lg: 1.125rem;
+  --text-label: 0.8125rem;
+  --text-caption: 0.75rem;
+  
+  /* Spacing scale */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+  --spacing-section: 4rem;
+  --spacing-card: 1.5rem;
+  --spacing-card-lg: 2rem;
+  
+  /* Border radius scale */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+  --radius-3xl: 2rem;
+  --radius-full: 9999px;
+  
+  /* Shadow system */
+  --shadow-sm: 0 1px 2px 0 rgba(45, 45, 45, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(45, 45, 45, 0.1), 0 2px 4px -2px rgba(45, 45, 45, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(45, 45, 45, 0.1), 0 4px 6px -4px rgba(45, 45, 45, 0.1);
+  --shadow-xl: 0 20px 25px -5px rgba(45, 45, 45, 0.1), 0 8px 10px -6px rgba(45, 45, 45, 0.1);
+  --shadow-purple-sm: 0 4px 12px rgba(124, 92, 191, 0.15);
+  --shadow-purple-md: 0 8px 24px rgba(124, 92, 191, 0.2);
+  --shadow-purple-lg: 0 16px 32px rgba(124, 92, 191, 0.25);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-cream);
+  color: var(--color-charcoal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Heartbeat pulse for counter digits */
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  14% { transform: scale(1.05); }
+  28% { transform: scale(1); }
+  42% { transform: scale(1.03); }
+  56% { transform: scale(1); }
+}
+
+.animate-heartbeat {
+  animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+/* Shimmer effect for button */
+@keyframes shimmer {
+  100% { transform: translateX(100%); }
+}
+
+/* Shake animation for wrong login */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  15%, 35%, 55%, 75%, 95% { transform: translateX(-3px); }
+  25%, 45%, 65%, 85% { transform: translateX(3px); }
+}
+
+.animate-shake {
+  animation: shake 0.4s ease-in-out;
+}
+
+/* Float animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Soft pulse animation */
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+/* Glow animation */
+@keyframes glow {
+  0% { box-shadow: 0 0 20px rgba(124, 92, 191, 0.3); }
+  100% { box-shadow: 0 0 30px rgba(124, 92, 191, 0.6); }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-lilac);
+  border-radius: 2px;
+}
+
+/* Button focus styles for accessibility */
+button:focus-visible {
+  outline: 2px solid var(--color-purple);
+  outline-offset: 2px;
+}
+
+input:focus-visible {
+  outline: 2px solid var(--color-purple);
+  outline-offset: 2px;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Spacing utilities */
+@layer utilities {
+  .px-responsive {
+    @apply px-6 sm:px-12 lg:px-16;
+  }
+  
+  .section-gap {
+    @apply gap-16 sm:gap-20;
+  }
+  
+  .card-padding {
+    @apply p-5 sm:p-6;
+  }
+  
+  /* Card styling utilities */
+  .card-base {
+    @apply bg-white/60 backdrop-blur-md rounded-2xl border border-lilac-light/30;
+  }
+  
+  .card-hover {
+    @apply transition-all duration-300 ease-out hover:shadow-purple-md hover:scale-[1.02] hover:border-lilac-light/60;
+  }
+  
+  .card-interactive {
+    @apply cursor-pointer active:scale-[0.98];
+  }
+  
+  /* Button styling utilities */
+  .btn-primary {
+    @apply px-8 py-3.5 bg-purple text-white font-sans font-medium text-sm tracking-wider rounded-full 
+           hover:bg-purple-dark active:bg-purple-dark transition-colors duration-200 
+           shadow-sm shadow-purple/20 hover:shadow-md hover:shadow-purple/25 relative overflow-hidden;
+  }
+  
+  .btn-secondary {
+    @apply px-8 py-3.5 border-2 border-lilac text-charcoal font-sans font-medium text-sm tracking-wider rounded-full
+           hover:bg-lilac-light/30 transition-colors duration-200;
+  }
+  
+  .btn-icon {
+    @apply p-3 rounded-full bg-white/80 backdrop-blur-sm border border-lilac-light/30
+           hover:bg-white hover:border-lilac-light/60 transition-all duration-200;
+  }
+  
+  /* Text styling utilities */
+  .text-gradient-purple {
+    @apply bg-gradient-to-r from-purple to-lilac bg-clip-text text-transparent;
+  }
+  
+  .text-gradient-rose {
+    @apply bg-gradient-to-r from-rose to-gold bg-clip-text text-transparent;
+  }
+  
+  /* Background utilities */
+  .bg-gradient-cream {
+    @apply bg-gradient-to-b from-cream via-cream to-lilac-light/20;
+  }
+  
+  .bg-gradient-purple {
+    @apply bg-gradient-to-br from-purple via-lilac-dark to-purple-dark;
+  }
+  
+  /* Glass effect */
+  .glass {
+    @apply bg-white/60 backdrop-blur-xl border border-white/40;
+  }
+  
+/* Animation utilities */
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-pulse-soft {
+    animation: pulse-soft 2s ease-in-out infinite;
+  }
+
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 768px) {
+  body {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  /* Adjust spacing for smaller screens */
+  .px-responsive {
+    @apply px-4;
+  }
+
+  .section-gap {
+    @apply gap-8;
+  }
+
+  /* Ensure buttons are tappable */
+  button {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Fix text readability */
+  p, span, div {
+    font-size: inherit;
+    line-height: inherit;
+  }
+}

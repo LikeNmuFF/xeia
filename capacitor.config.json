@@ -1,0 +1,12 @@
+{
+  "appId": "com.erica.xeia",
+  "appName": "Xeia",
+  "webDir": "dist",
+  "server": {
+    "androidScheme": "https"
+  },
+  "android": {
+    "allowMixedContent": true,
+    "captureInput": true
+  }
+}
